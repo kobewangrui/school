@@ -31,19 +31,26 @@
 			<div class="line"></div>
 		</header>
 		<section>
-			<div v-for="i in 3" class="noticeGroup">
+			<router-link v-for="i in 3" class="noticeGroup" :key="i.id" to="/detail">
 				<p class="title">国庆放假通知</p>
 				<p class="date">
 					<span class="top">置顶</span>
 					<span class="time">2017-09-28 09:30</span>
 				</p>
 				<p class="content">国庆放假通知国庆放假通知国庆放假通知国庆放假通知国庆放假通知国庆放假通知国庆放假通知国庆放假通知</p>
-				<p class="img">
-					<img v-if="i===1" :src="require('assets/image/timg.jpg')">
-					<img v-if="i===2 || i===1" :src="require('assets/image/timg.jpg')">
-					<img v-if="i==3 || i===2 || i===1" :src="require('assets/image/timg.jpg')">
+				<p class="img one" v-if="i===1">
+					 <img :src="require('assets/image/timg.jpg')"> 
+				</p>		
+				<p class="img two" v-if="i===2">
+					 <img :src="require('assets/image/timg.jpg')">
+					<img :src="require('assets/image/timg.jpg')"> 
+				</p>		
+				<p class="img three" v-if="i===3">
+					 <img :src="require('assets/image/timg.jpg')"> 
+					 <img :src="require('assets/image/timg.jpg')">
+					<img :src="require('assets/image/timg.jpg')"> 
 				</p>
-			</div>
+			</router-link>
 		</section>
 	</div>
 </template>
