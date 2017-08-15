@@ -1,0 +1,112 @@
+
+.content{
+    background: #fff;
+    padding: .3rem;
+    margin-bottom: .3rem;
+}
+.content .title{
+    font-size: .36rem;
+}
+.content .date{
+    color: #868686;
+    font-size: .28rem;
+    margin: .2rem 0 .3rem;
+}
+.content .discrib{
+    font-size: .28rem;
+}
+
+.content .img{
+    display: flex;
+    margin: .2rem 0;
+}
+.content .img img{
+    border-radius: 8px;
+    justify-content: space-between;
+}
+.content .one img{
+    width: 6.9rem;
+    height: 3.8rem; 
+}
+.content .two img{
+    width: 3.4rem;
+    height: 3.4rem; 
+}
+.content .three img{
+    width: 2.22rem;
+    height: 2.22rem; 
+}
+.content .two img:last-child,
+.content .two img:nth-child(2),
+.content .three img:last-child,
+.content .three img:nth-child(2){
+    margin-left: .2rem;
+}
+.comment{
+    background: #fff;
+    padding: 0 .3rem;
+}
+.comment .commentHeader{
+    display:flex;
+    justify-content: center;
+    border-bottom: 1px solid #f0f0f0;
+    padding: .2rem 0;
+}
+.comment .commentHeader p:first-child{
+    font-size: .32rem;
+    flex: 2.4;
+    text-align: right;
+}
+.comment .commentHeader p:last-child{
+    font-size: .3rem;
+    color: #0BA1E9;
+    flex: 1.4;
+    text-align: right;
+}
+.comment .commentDetail{
+    padding: .3rem 0;
+}
+.comment .commentDetail .outer{
+    display: flex;
+    justify-content: space-between;
+    align-items:center; 
+}
+.comment .commentDetail .leftComment{
+    display: flex;
+    align-items:center;
+}
+.comment .commentDetail .headerImg img{
+    width: .8rem;
+    height: .8rem;
+    border-radius: 50%;
+}
+.comment .commentDetail .headerImg{
+    margin-right: .2rem;
+}
+.comment .commentDetail .personMsg p:first-child{
+    font-size: .32rem;
+}
+.comment .commentDetail .personMsg p:last-child{
+    font-size: .28rem;
+    color: #868686;
+}
+.comment .commentDetail .recognize{
+    font-size: .3rem;
+}
+.comment .commentDetail .recognize img{
+    width: .4rem;
+    height: .4rem;
+}
+.comment .commentDetail .recognize img,
+.comment .commentDetail .recognize span{
+    vertical-align: middle;
+}
+.comment .commentDetail p.detail{
+    font-size: .3rem;
+}
+.showAll{
+    height: .78rem;
+    line-height: .78rem;
+    text-align: center;
+    font-size: .3rem;
+}

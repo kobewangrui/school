@@ -1,6 +1,6 @@
  <style src="assets/css/index.css" scoped></style> 
 <template>
-	<div>
+	<div class="index">
 		<header>
 			<ul>
 				<router-link tag="li" to="/">
@@ -31,7 +31,7 @@
 			<div class="line"></div>
 		</header>
 		<section>
-			<router-link v-for="i in 3" class="noticeGroup" :key="i.id" to="/detail">
+			<router-link v-for="i in 3" class="noticeGroup" :key="i.id" to="/detail" tag="div">
 				<p class="title">国庆放假通知</p>
 				<p class="date">
 					<span class="top">置顶</span>

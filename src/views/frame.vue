@@ -6,8 +6,9 @@
 	}
 	body{
 		color: #333;
-		padding: 0 .3rem;
 		box-sizing: border-box;
+		overflow: hidden;
+		background: #f6f6f6;   
 	}
 	ul li{
 		list-style: none;

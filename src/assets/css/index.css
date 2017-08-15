@@ -1,11 +1,13 @@
+.index{
+    padding: .3rem;
+    background: #fff; 
+}
 /* header */
 header ul{
-    font-size: 0.34rem;
+    font-size: .34rem;
     display: flex;
     justify-content: space-between;
-    padding-top: .2rem;
 }
-
   header ul li.router-link-active{
     color: #0BA1E9;
 } 
@@ -29,10 +31,11 @@ header .line{
     margin:.3rem 0 1.7rem;
 }
 .noticeGroup{
-    border-bottom: 1px solid #dfdfdf;
+    border-bottom: 1px solid #d3d3d3;
+    padding-bottom: .3rem;
 }
 .noticeGroup p{
-    margin-top: 0.2rem;
+    margin-top: .2rem;
 }
  .noticeGroup p.title{
     font-size: .36rem;
@@ -48,13 +51,17 @@ header .line{
     border: .02rem solid #ff1919;
     border-radius: .08rem;
     color: #ff1919;
-     width: .7rem;
-     height: .4rem;  
-     text-align: center;
+    width: .7rem;
+    height: .4rem;  
+    text-align: center;
+    margin-right: .2rem;
+}
+.noticeGroup p.date .top,
+.noticeGroup p.date .time{
+    vertical-align: middle;
 }
 .noticeGroup p.date .time{
     color: #868686;
-    margin-left: .2rem;
 }
 .noticeGroup .img{
     display: flex;
@@ -71,13 +78,14 @@ header .line{
     width: 3.4rem;
     height: 3.4rem; 
 }
-.noticeGroup .two img:last-child,
-.noticeGroup .two img:nth-child(2),
-.noticeGroup .three img:last-child,
-.noticeGroup .three img:nth-child(2){
-    margin-left: 0.2rem;
-}
 .noticeGroup .three img{
     width: 2.22rem;
     height: 2.22rem; 
 }
+.noticeGroup .two img:last-child,
+.noticeGroup .two img:nth-child(2),
+.noticeGroup .three img:last-child,
+.noticeGroup .three img:nth-child(2){
+    margin-left: .2rem;
+}
+
