@@ -1,0 +1,62 @@
+/* header */
+header ul{
+    font-size: 0.34rem;
+    display: flex;
+    justify-content: space-between;
+    padding-top: .2rem;
+}
+
+  header ul li.router-link-active{
+    color: #0BA1E9;
+} 
+header ul li.router-link-active p:last-child{
+    text-align: center;
+}
+header ul li.router-link-active p:last-child span{
+    display: inline-block;
+    width: .6rem;
+    border: .025rem solid #0BA1E9;
+    border-radius: .08rem;
+}
+header .line{
+    border-bottom: 1px solid #f6f6f6;
+    position: relative;
+    bottom: .1rem;
+}
+
+/*section  */
+ section{
+    margin-top: .3rem;
+}
+.noticeGroup{
+    border-bottom: 1px solid #dfdfdf;
+}
+.noticeGroup p{
+    margin-top: 0.2rem;
+}
+ .noticeGroup p.title{
+    font-size: .36rem;
+}
+.noticeGroup p.date{
+    font-size: .28rem;
+}
+.noticeGroup p.content{
+    font-size: .28rem;
+}
+.noticeGroup p.date .top{
+    display: inline-block;
+    border: .02rem solid #ff1919;
+    border-radius: .08rem;
+    color: #ff1919;
+     width: .7rem;
+     height: .4rem;  
+     text-align: center;
+}
+.noticeGroup p.date .time{
+    color: #868686;
+    margin-left: .2rem;
+}  
+.noticeGroup .img{
+    width: 0.69rem;
+    height: 0.38rem;
+}
