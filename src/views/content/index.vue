@@ -43,12 +43,12 @@
 				</p>		
 				<p class="img two" v-if="i===2">
 					 <img :src="require('assets/image/timg.jpg')">
-					<img :src="require('assets/image/timg.jpg')"> 
+					 <img :src="require('assets/image/timg.jpg')"> 
 				</p>		
 				<p class="img three" v-if="i===3">
 					 <img :src="require('assets/image/timg.jpg')"> 
 					 <img :src="require('assets/image/timg.jpg')">
-					<img :src="require('assets/image/timg.jpg')"> 
+					 <img :src="require('assets/image/timg.jpg')"> 
 				</p>
 			</router-link>
 		</section>

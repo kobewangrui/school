@@ -2,6 +2,7 @@
 .content{
     background: #fff;
     padding: .3rem;
+    box-sizing: border-box;
     margin-bottom: .3rem;
 }
 .content .title{
@@ -21,7 +22,7 @@
     margin: .2rem 0;
 }
 .content .img img{
-    border-radius: 8px;
+    border-radius: .08rem;
     justify-content: space-between;
 }
 .content .one img{
@@ -45,11 +46,13 @@
 .comment{
     background: #fff;
     padding: 0 .3rem;
+    box-sizing: border-box;
+    margin-bottom: 1.6rem;
 }
 .comment .commentHeader{
     display:flex;
     justify-content: center;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: .01rem solid #f0f0f0;
     padding: .2rem 0;
 }
 .comment .commentHeader p:first-child{

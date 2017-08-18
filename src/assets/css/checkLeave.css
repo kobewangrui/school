@@ -1,0 +1,74 @@
+.leaveDetail{
+    font-size: .34rem;
+    background: #fff;
+    padding: .3rem;
+}
+.leaveDetail p{
+    margin-bottom: .3rem;
+}
+.leaveDetail p span:first-child{
+    display: inline-block;
+    width: 1.4rem;
+    margin-right: .45rem; 
+}
+.noticeGroup .img{
+    display: flex;
+}
+.noticeGroup .img img{
+    border-radius: .08rem;
+    justify-content: space-between;
+}
+.noticeGroup .one img{
+    width: 6.9rem;
+    height: 3.8rem; 
+}
+.noticeGroup .two img{
+    width: 3.4rem;
+    height: 3.4rem; 
+}
+.noticeGroup .three img{
+    width: 2.22rem;
+    height: 2.22rem; 
+}
+.noticeGroup .two img:last-child,
+.noticeGroup .two img:nth-child(2),
+.noticeGroup .three img:last-child,
+.noticeGroup .three img:nth-child(2){
+    margin-left: .2rem;
+}
+.historyChat{
+    display: flex;
+    justify-content: space-between;
+    font-size: .34rem;
+    background: #fff;
+    padding: 0 .3rem;
+     margin: .3rem 0 .6rem; 
+    height: 1.1rem;
+    line-height: 1.1rem;
+}
+.historyChat span:last-child{
+    color: rgba(0,0,0,.8);
+    transform: scale(.8,1.7);
+}
+.operate{
+    text-align: center;
+    margin-bottom: 1.6rem;
+}
+.operate button{
+    width: 45%;
+     height: 0.88rem; 
+    border-radius: .08rem;
+    font-size: .34rem;
+    color: #fff;
+}
+.operate button.reject{
+    background: #FB6155;
+}
+.operate button.agree{
+    background: #2CB8EE;
+}
+.operate button.recall{
+    width: 92%;
+    background: #46c45d;
+    display: none;
+} 

@@ -17,7 +17,7 @@
                 <p>评论（1456）</p>
                 <router-link tag="p" to="/editComment">写评论</router-link>
             </div>
-            <div class="commentDetail" v-for="i in 10" :key="i.id" v-if="i<4">
+            <div class="commentDetail" v-for="i in 10" :key="i.id" v-show="i<showLen">
                 <div class="outer">
                     <div class="leftComment">
                         <div class="headerImg">
@@ -37,14 +37,24 @@
                 <p class="detail">以北京院方，以北京古巷，毛不易</p>
             </div>            
         </section>
-        <p class="showAll" v-if="!showAll" @click="showAll = !showAll">查看全部</p>
+        <p class="showAll" v-if="showAll" @click="showMore">查看全部</p>
     </div>
 </template>
 <script>
     export default{
         data(){
             return{
-                showAll:false
+                showAll:true,
+                showLen:4
+            }
+        },
+        created(){
+            this.list>4?thsi.showAll=true:this.showAll=false
+        },
+        methods:{
+            showMore(){
+                this.showLen = 10;
+                this.showAll = false;
             }
         }
     }

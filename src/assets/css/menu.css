@@ -1,0 +1,37 @@
+.menu{
+    padding: .3rem;
+    box-sizing: border-box;
+}
+section .title{
+    font-size: .36rem;
+    color: #a4a4a4;
+    margin-bottom: .4rem;
+}
+section .title span:first-child{
+    display: inline-block;
+    height: .3rem;
+    border-left: .1rem solid #0BA1E9;
+    border-radius: .3rem;
+}
+section ul.list{
+    display: flex;
+    font-size: .28rem;
+    text-align: center;
+    justify-content: flex-start;   
+}
+section ul.list li{
+    width: 1.7rem;
+    margin-bottom: .8rem;
+}
+section ul.list li img{
+    height: .5rem;
+    margin-bottom: .1rem;
+}
+section.lineMore ul.list{
+    flex-wrap: wrap;
+}
+section.firstList ul.list li:last-child,
+section.lineMore ul.list li:nth-child(4),
+section.lineMore ul.list li:nth-child(8){
+    margin-right: 0;
+}

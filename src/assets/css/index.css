@@ -1,6 +1,7 @@
 .index{
     padding: .3rem;
     background: #fff; 
+    box-sizing: border-box;
 }
 /* header */
 header ul{
@@ -21,17 +22,17 @@ header ul li.router-link-active p:last-child span{
     border-radius: .08rem;
 }
 header .line{
-    border-bottom: 1px solid #f6f6f6;
+    border-bottom: .01rem solid #f6f6f6;
     position: relative;
     bottom: .1rem;
 }
 
 /*section  */
  section{
-    margin:.3rem 0 1.7rem;
+    margin:.3rem 0 1.6rem;
 }
 .noticeGroup{
-    border-bottom: 1px solid #d3d3d3;
+    border-bottom: .01rem solid #d3d3d3;
     padding-bottom: .3rem;
 }
 .noticeGroup p{
@@ -67,7 +68,7 @@ header .line{
     display: flex;
 }
 .noticeGroup .img img{
-    border-radius: 8px;
+    border-radius: .08rem;
     justify-content: space-between;
 }
 .noticeGroup .one img{

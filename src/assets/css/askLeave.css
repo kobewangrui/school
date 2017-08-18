@@ -1,0 +1,66 @@
+.leaveTime{
+    font-size: .32rem;
+    color: #585858;
+    line-height: 1rem;
+    margin-left: .3rem;
+}
+.dateTime{
+    font-size: .34rem;
+}
+.dateTime div{
+    background: #fff;
+    padding: .3rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+.dateTime div p:last-child{
+    color: #999;
+}
+.because textarea{
+    width: 100%;
+    height: 2.1rem;
+    font-size: .32rem;
+    padding: .2rem;
+    resize: none;
+    box-sizing: border-box;
+    margin: .3rem auto;
+}
+.uploadImg{
+    background: #fff;
+    padding: .3rem;
+    box-sizing: border-box;
+}
+.uploadImg p{
+    font-size: .34rem;
+}
+.uploadImg .imgList{
+    margin-top: .4rem;
+}
+.uploadImg .imgList img{
+    width: 2.22rem;
+    height: 2.22rem;
+}
+.studentMsg{
+    display: flex;
+    justify-content: space-between;
+    font-size: .34rem;
+    line-height: 1.1rem;
+    background: #fff;
+    padding: 0 .3rem;
+    margin: .2rem 0;
+    box-sizing: border-box;
+}
+.btnSubmit{
+     margin-bottom: 1.6rem;
+     padding: 0 .3rem;
+     box-sizing: border-box;
+}
+.btnSubmit .btn{
+    width: 100%;
+    height: 0.88rem;
+    border-radius: .08rem;
+    font-size: .34rem;
+    background: #2CB8EE;
+    color: #fff;
+}
