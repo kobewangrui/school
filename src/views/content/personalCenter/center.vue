@@ -37,6 +37,8 @@
     }
     section .list .title img{
         margin-right: .22rem;
+        width: .48rem;
+        height: .39rem;
     }    
     section .list .title span,
     section .list .title img{
