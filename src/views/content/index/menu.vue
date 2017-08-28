@@ -7,7 +7,7 @@
                 <span>日常事务</span>
             </p>        
             <ul class="list">
-                <router-link tag="li" to="/askLeave">
+                <router-link tag="li" to="/askForLeave/askLeave">
                      <img :src="require('assets/image/askLeave.png')"> 
                     <p>请假申请</p>
                 </router-link>
@@ -19,10 +19,10 @@
                     <img :src="require('assets/image/register.png')"> 
                     <p>报道</p>
                 </li>
-                <li>
+                <router-link tag="li" to="/askForLeave/leaveHistory">
                     <img :src="require('assets/image/examineAndApprove.png')"> 
                     <p>审批</p>
-                </li>
+                </router-link>
             </ul>
         </section>
         <section class="lineMore">
@@ -31,7 +31,7 @@
                 <span>校园服务</span>
             </p>        
             <ul class="list">
-                <router-link to="/consult" tag="li">
+                <router-link to="/psychology/consult" tag="li">
                      <img :src="require('assets/image/psychologicalCounseling.png')"> 
                     <p>心理咨询</p>
                 </router-link>

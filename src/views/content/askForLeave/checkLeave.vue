@@ -1,5 +1,6 @@
 <style lang="css" src="assets/css/checkLeave.css" scoped></style>
 <template>
+<!-- 学生和老师的请假详情写在一起了 -->
     <div>
           <section class="leaveDetail">
             <p>
@@ -37,14 +38,16 @@
                 </p>
             </div>
         </section>  
-        <div class="historyChat">
+        <router-link to="/askForLeave/leaveHistory" tag="div" class="historyChat">
             <span>查看Ta的历史记录</span>
             <span> > </span>
-        </div>
+        </router-link>
+        <textarea class="comment" placeholder="添加备注"></textarea>
         <div class="operate">
-             <button class="reject">拒绝</button>
-            <button class="agree">同意</button> 
-            <button class="recall">撤回</button>   
+            <button class="reject">拒绝</button>
+            <button class="agree">同意</button>
+            <button class="recall">撤回</button>
         </div>
     </div>
 </template>
+

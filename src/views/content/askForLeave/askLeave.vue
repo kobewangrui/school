@@ -25,8 +25,8 @@
             <p>计算机多媒体1401班</p>
             <p>王睿龙</p>
         </div>
-         <div class="btnSubmit"> 
+         <div class="btnSubmit">
             <button class="btn">提交</button>
-         </div> 
+         </div>
     </div>
 </template>

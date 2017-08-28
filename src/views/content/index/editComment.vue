@@ -13,7 +13,7 @@
 		data(){
 			return{
 				btnSubmit:false,
-				content:''
+				content:'',
 			}
 		},
 		created(){

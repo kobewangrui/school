@@ -1,12 +1,17 @@
-.leaveDetail{
+.leaveDetail,
+.illIntro{
     font-size: .34rem;
     background: #fff;
     padding: .3rem;
 }
+.illIntro{
+    margin-bottom: .2rem;
+}
 .leaveDetail p{
     margin-bottom: .3rem;
 }
-.leaveDetail p span:first-child{
+.leaveDetail p span:first-child,
+.illIntro span:first-child{
     display: inline-block;
     width: 1.4rem;
     margin-right: .45rem; 
@@ -70,5 +75,24 @@
 .operate button.recall{
     width: 92%;
     background: #46c45d;
-    display: none;
-} 
+}
+textarea.comment{
+    width:100%;
+    height:1.8rem;
+    font-size: .34rem;
+    box-sizing: border-box;
+    padding: .2rem;
+}
+.sign{
+    width: 1.98rem;
+    position: absolute;
+    right: 0;
+}
+.successHaveIntro{
+    height: 2.5rem;
+    top: .7rem;
+}
+.success{
+    height: 1.98rem;
+    top: 0;
+}
