@@ -11,14 +11,14 @@
                      <img :src="require('assets/image/askLeave.png')"> 
                     <p>请假申请</p>
                 </router-link>
-                <li>
+                <router-link tag="li" to="/leaveSchool/leave">
                     <img :src="require('assets/image/leaveSchool.png')"> 
                     <p>离校</p>
-                </li>
-                <li>
+                </router-link>
+                <router-link tag="li" to="/leaveSchool/report">
                     <img :src="require('assets/image/register.png')"> 
                     <p>报道</p>
-                </li>
+                </router-link>
                 <router-link tag="li" to="/askForLeave/leaveHistory">
                     <img :src="require('assets/image/examineAndApprove.png')"> 
                     <p>审批</p>

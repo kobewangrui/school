@@ -1,4 +1,4 @@
- <style src="assets/css/index.css" scoped></style> 
+ <style src="assets/css/index.css" scoped lang="css"></style> 
 <template>
 	<div class="index">
 		<header>

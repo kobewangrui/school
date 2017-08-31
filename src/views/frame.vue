@@ -7,8 +7,9 @@
 	body{
 		color: #333;
 		box-sizing: border-box;
-		overflow: hidden;
-		background: #f6f6f6;   
+		background: #f6f6f6; 
+		width: 100%;
+		height: 100%;  
 	}
 	ul li{
 		list-style: none;
@@ -141,7 +142,7 @@
 					<img :src="require('assets/image/homeActive.png')" class="homeActive">
 					<p>首页</p>
 				</router-link>
-				<router-link to="/askForLeave/checkLeave" tag="li">
+				<router-link to="/recharge/electricMoney" tag="li">
 					<img :src="require('assets/image/pay.png')" class="pay">
 					<img :src="require('assets/image/payActive.png')" class="payActive"> 
 					<p>支付</p>

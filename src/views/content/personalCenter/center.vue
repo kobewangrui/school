@@ -57,23 +57,23 @@
                 <img :src="require('assets/image/timg.jpg')" alt="">
                 <span>欧阳帅帅</span>
             </div>
-            <div class="change">修改</div>
+            <router-link to="/personalCenter/changeMsg" tag="div" class="change">修改</router-link>
         </header>
         <section>
-            <div class="list">
+            <router-link to="/personalCenter/msgList" tag="div" class="list">
                 <div class="title">
                     <img :src="require('assets/image/mineActive.png')">
                     <span>我的消息</span>
                 </div>
                 <div class="more"> > </div>
-            </div>
-            <div class="list">
+            </router-link>
+            <router-link to="/personalCenter/payList" tag="div" class="list">
                 <div class="title">
                     <img :src="require('assets/image/mineActive.png')">
                     <span>支付记录</span>
                 </div>
                 <div class="more"> > </div>
-            </div>
+            </router-link>
         </section>
     </div>
 </template>

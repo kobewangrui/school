@@ -50,6 +50,18 @@ export default function (VueRouter) {
 						path: 'consult',
 						component: require('views/content/psychology/consult.vue')
 					},
+					{
+						path: 'msgListStudent',
+						component: require('views/content/psychology/msgListStudent.vue')
+					},
+					{
+						path: 'msgListTeacher',
+						component: require('views/content/psychology/msgListTeacher.vue')
+					},
+					{
+						path: 'studentChat',
+						component: require('views/content/psychology/studentChat.vue')
+					}
 				]
 			},
 			{
@@ -60,6 +72,43 @@ export default function (VueRouter) {
 						path: 'center',
 						component: require('views/content/personalCenter/center.vue')
 					},
+					{
+						path: 'changeMsg',
+						component: require('views/content/personalCenter/changeMsg.vue')
+					},
+					{
+						path: 'phoneNumber',
+						component: require('views/content/personalCenter/phoneNumber.vue')
+					},
+					{
+						path: 'payList',
+						component: require('views/content/personalCenter/payList.vue')
+					}
+				]
+			},
+			{
+				path: '/leaveSchool',
+				component: require('views/content/leaveSchool.vue'),
+				children:[
+					{
+						path: 'report',
+						component: require('views/content/leaveSchool/report.vue')
+					},
+					{
+						path: 'leave',
+						component: require('views/content/leaveSchool/leave.vue')
+					}
+				]
+			},
+			,
+			{
+				path: '/recharge',
+				component: require('views/content/recharge.vue'),
+				children:[
+					{
+						path: 'electricMoney',
+						component: require('views/content/recharge/electricMoney.vue')
+					}
 				]
 			}
 		]

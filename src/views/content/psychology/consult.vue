@@ -24,9 +24,24 @@
                     <i></i>
                 </label>
                 <label for="name">匿名发送</label>
-                <button>发送</button>
+                <button @click="sendMsg()">发送</button>
             </p>
         </section>
         <p class="teacherIntro">老师会在第一时间与你联系~</p>
     </div>
 </template>
+<script>
+export default {
+    data(){
+        return{
+
+        }
+    },
+    methods:{
+        sendMsg(){
+            this.$router.push('/psychology/msgListStudent/')
+        }
+    }
+}
+</script>
+
