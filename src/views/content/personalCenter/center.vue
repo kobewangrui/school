@@ -62,15 +62,22 @@
         <section>
             <router-link to="/personalCenter/msgList" tag="div" class="list">
                 <div class="title">
-                    <img :src="require('assets/image/mineActive.png')">
+                    <img :src="require('assets/image/news.png')">
                     <span>我的消息</span>
                 </div>
                 <div class="more"> > </div>
             </router-link>
             <router-link to="/personalCenter/payList" tag="div" class="list">
                 <div class="title">
-                    <img :src="require('assets/image/mineActive.png')">
+                    <img :src="require('assets/image/payHistory.png')">
                     <span>支付记录</span>
+                </div>
+                <div class="more"> > </div>
+            </router-link>
+            <router-link to="/personalCenter/personalInfo" tag="div" class="list">
+                <div class="title">
+                    <img :src="require('assets/image/personalInformation.png')">
+                    <span>个人信息</span>
                 </div>
                 <div class="more"> > </div>
             </router-link>

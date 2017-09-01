@@ -28,19 +28,33 @@
 
 <template>
     <ul>
-        <li>毕业生贷款还贷</li>
         <li>
-            <span>档案转移</span>
+            <span>入学报道</span>
+            <span class="fail"> 未完成 </span>
+        </li>
+        <li>
+            <span>学杂费</span>
+            <span class="success"> 已缴纳 </span>
+        </li>
+        <router-link to="/leaveSchool/detail" tag="li">
+            <span>户口迁移材料的提交</span>
             <span class="more"> > </span>
-        </li>
+        </router-link>
         <li>
-            <span>学费、住宿费</span>
-            <span class="success"> 已完成 </span>
+            <span>保险箱的租借</span>
+            <span class="success"> 已租借 </span>
         </li>
-        <li>四联单盖章及就业咨询</li>
-        <li>
-            <span>图书归还</span></span>
-            <span class="fail">未完成</span>
-        </li>
+        <router-link to="/leaveSchool/detail" tag="li">
+            <span>关于转专业</span>
+            <span class="more"> > </span>
+        </router-link>
+        <router-link tag="li" to="/leaverSchool/arg">
+            <span>文体特长</span></span>
+            <span class="fail">未提交</span>
+        </router-link>
+        <router-link to="/leaveSchool/reportBecause" tag="li">
+            <span>报考学校的原因</span></span>
+            <span class="fail">未提交</span>
+        </router-link>
     </ul>
 </template>

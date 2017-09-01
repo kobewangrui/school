@@ -161,8 +161,8 @@
 		</footer>
 		<div class="pop" :class="{'popHide':pop}">
 			<p>
-				<img :src="require('assets/image/loginBgimg.png')" alt="">
-			</p>		
+				<img :src="require('assets/image/loginBgimg.png')">
+			</p>
 			<p>
 				<input type="text" placeholder="学号/工号">
 			</p>		

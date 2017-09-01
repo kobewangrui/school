@@ -37,7 +37,7 @@
     input[type="radio"]{
         display: none;
     }
-    input[type="radio"]:checked+label{
+    input[type="radio"] + label.router-link-active{
         border: 0.01rem solid #2cb8ee;
         color: #2cb8ee;
     }
@@ -47,6 +47,13 @@
         width: 100%;
         height: .88rem;
         border-radius: .08rem;
+        background: #E9EbEC;
+        height: .88rem;
+        line-height: .88rem;
+        border-radius: .08rem;
+    }
+    footer button.active{
+        background: #2cb8ee;
     }
     footer .PayHistory{
         color: #2cb8ee;
@@ -62,11 +69,11 @@
             <ul>
                 <li>
                     <input type="radio" id="schoolCard" name="pay">
-                    <label for="schoolCard">校园卡</label>
+                    <router-link to="/recharge/schoolMoney" tag="label" for="schoolCard">校园卡</router-link>
                 </li>
                 <li>
                     <input type="radio" id="electric" name="pay">
-                    <label for="electric">电费</label>
+                    <router-link to="/recharge/electricMoney" tag="label" for="electric">电费</router-link>
                 </li>
                 <li>
                     <input type="radio" id="net" name="pay">

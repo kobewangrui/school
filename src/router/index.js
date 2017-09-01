@@ -83,6 +83,14 @@ export default function (VueRouter) {
 					{
 						path: 'payList',
 						component: require('views/content/personalCenter/payList.vue')
+					},
+					{
+						path: 'personalInfo',
+						component: require('views/content/personalCenter/personalInfo.vue')
+					},
+					{
+						path: 'msgList',
+						component: require('views/content/personalCenter/msgList.vue')
 					}
 				]
 			},
@@ -97,10 +105,17 @@ export default function (VueRouter) {
 					{
 						path: 'leave',
 						component: require('views/content/leaveSchool/leave.vue')
+					},
+					{
+						path: 'detail',
+						component: require('views/content/leaveSchool/detail.vue')
+					},
+					{
+						path: 'reportBecause',
+						component: require('views/content/leaveSchool/reportBecause.vue')
 					}
 				]
 			},
-			,
 			{
 				path: '/recharge',
 				component: require('views/content/recharge.vue'),
@@ -108,9 +123,24 @@ export default function (VueRouter) {
 					{
 						path: 'electricMoney',
 						component: require('views/content/recharge/electricMoney.vue')
+					},
+					{
+						path: 'schoolMoney',
+						component: require('views/content/recharge/schoolMoney.vue')
 					}
 				]
-			}
+			},
+			{
+				path: '/recruit',
+				component: require('views/content/recruit.vue'),
+				children:[
+					{
+						path: 'recruitDetail',
+						component: require('views/content/recruit/recruitDetail.vue')
+					}
+				]
+			},
+
 		]
 	}
   ]

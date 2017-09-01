@@ -1,7 +1,7 @@
 <style lang="css" src="assets/css/menu.css" scoped></style>
 <template>
     <div class="menu">
-        <section class="firstList">
+        <section class="lineMore">
             <p class="title">
                 <span></span>
                 <span>日常事务</span>
@@ -15,14 +15,18 @@
                     <img :src="require('assets/image/leaveSchool.png')"> 
                     <p>离校</p>
                 </router-link>
-                <router-link tag="li" to="/leaveSchool/report">
+                <li @click="popToggle('report')">
                     <img :src="require('assets/image/register.png')"> 
                     <p>报道</p>
-                </router-link>
+                </li>
                 <router-link tag="li" to="/askForLeave/leaveHistory">
                     <img :src="require('assets/image/examineAndApprove.png')"> 
                     <p>审批</p>
                 </router-link>
+                <li @click="popToggle('recruit')">
+                    <img :src="require('assets/image/enroll.png')"> 
+                    <p>录取查询</p>
+                </li>
             </ul>
         </section>
         <section class="lineMore">
@@ -73,5 +77,57 @@
                 </li>
             </ul>
         </section>
+        <div class="pop" :class="{'popShow':popHandle}">
+                <p>
+                    <img :src="require('assets/image/loginBgimg.png')" alt="">
+                </p>
+                <p>
+                    <input type="text" :placeholder="placeholderUname">
+                </p>		
+                <p>
+                    <input type="text" :placeholder="placeholderPwd">
+                </p>	
+                <p>
+                    <button @click="search">{{btnText}}</button>	
+                </p>		
+            </div>
+            <div class="cover" @click="popToggle" v-if="popHandle"></div>
     </div>
 </template>
+<script>
+	export default{
+		data(){
+			return{
+                popHandle:false,
+                placeholderUname:'',
+                placeholderPwd:'',
+                btnText:'',
+                searchType:''
+			}
+		},
+		methods:{
+			popToggle(arg){
+                this.popHandle = !this.popHandle;
+                if(arg ==='recruit'){
+                    this.placeholderUname = '学号';
+                    this.placeholderPwd = '身份证后六位';
+                    this.btnText = '查询';
+                    this.searchType = 1;
+                }else if(arg === 'report'){
+                    this.placeholderUname = '学号/录取通知书号（大写字母）';
+                    this.placeholderPwd = '密码/身份证后六位（大写字母）';
+                    this.btnText = '登录';
+                    this.searchType = 2;
+                }
+            },
+            search(){
+                if(this.searchType === 1){
+                    this.$router.push('/recruit/recruitDetail')
+                }else if(this.searchType === 2){
+                    this.$router.push('/leaveSchool/report')
+                }
+            }
+		}
+	}
+</script>
+
