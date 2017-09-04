@@ -35,7 +35,7 @@
         font-size: .26rem;
         border-radius: 50%;
         background: #fff;
-        content: '\2714';
+        content: '.';
         color: #fff;
     }   
     .formFill input[type='checkbox']:checked+label:before{

@@ -2,24 +2,35 @@ export default function (VueRouter) {
   const routes = [
     {
 		path: '/',
-		component: require('views/content/index.vue'),
+		component: require('views/content/home.vue'),
 		children:[
 			{
 				path: '/',
-				component: require('views/content/index/index.vue')
+				component: require('views/content/index.vue'),
+				children:[
+					{
+						path: '/',
+						component: require('views/content/index/index.vue')
+					},
+					{
+						path: '/detail',
+						component: require('views/content/index/detail.vue')
+					},
+					{
+						path: '/editComment',
+						component: require('views/content/index/editComment.vue')
+					},
+					{
+						path: '/menu',
+						component: require('views/content/index/menu.vue')
+					},
+					{
+						path: 'center',
+						component: require('views/content/index/center.vue')
+					},
+				]
 			},
-			{
-				path: '/detail',
-				component: require('views/content/index/detail.vue')
-			},
-			{
-				path: '/editComment',
-				component: require('views/content/index/editComment.vue')
-			},
-			{
-				path: '/menu',
-				component: require('views/content/index/menu.vue')
-			},
+
 			{
 				path: '/askForLeave',
 				component: require('views/content/askForLeave.vue'),
@@ -69,10 +80,6 @@ export default function (VueRouter) {
 				component: require('views/content/personalCenter.vue'),
 				children:[
 					{
-						path: 'center',
-						component: require('views/content/personalCenter/center.vue')
-					},
-					{
 						path: 'changeMsg',
 						component: require('views/content/personalCenter/changeMsg.vue')
 					},
@@ -113,6 +120,14 @@ export default function (VueRouter) {
 					{
 						path: 'reportBecause',
 						component: require('views/content/leaveSchool/reportBecause.vue')
+					},
+					{
+						path: 'studentArtInput',
+						component: require('views/content/leaveSchool/studentArtInput.vue')
+					},
+					{
+						path: 'studentArtShow',
+						component: require('views/content/leaveSchool/studentArtShow.vue')
 					}
 				]
 			},
@@ -121,13 +136,13 @@ export default function (VueRouter) {
 				component: require('views/content/recharge.vue'),
 				children:[
 					{
+						path: 'schoolMoney',
+						component: require('views/content/recharge/schoolMoney.vue')
+					},
+					{
 						path: 'electricMoney',
 						component: require('views/content/recharge/electricMoney.vue')
 					},
-					{
-						path: 'schoolMoney',
-						component: require('views/content/recharge/schoolMoney.vue')
-					}
 				]
 			},
 			{

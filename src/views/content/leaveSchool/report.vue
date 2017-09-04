@@ -48,7 +48,7 @@
             <span>关于转专业</span>
             <span class="more"> > </span>
         </router-link>
-        <router-link tag="li" to="/leaverSchool/arg">
+        <router-link tag="li" to="/leaveSchool/studentArtInput">
             <span>文体特长</span></span>
             <span class="fail">未提交</span>
         </router-link>
