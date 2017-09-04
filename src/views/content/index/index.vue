@@ -3,35 +3,17 @@
 	<div class="index">
 		<header>
 			<ul>
-				<router-link tag="li" to="/">
-					<p>每日之星</p>
+				<router-link to="/" tag="li" v-for="item in titleList" :key="item.id">
+					<p>{{item.name}}</p>
 					<p> 
 						<span></span>
 					</p> 
-				</router-link>
-				<router-link tag="li" to="/">
-					<p>优秀学生</p>
-					<p>
-						<span></span>
-					</p>
-				</router-link>
-				<router-link tag="li" to="/">
-					<p>辅导员之声</p>
-					<p>
-						<span></span>
-					</p>
-				</router-link>
-				<router-link tag="li" to="/">
-					<p>公告</p>
-					<p>
-						<span></span>
-					</p>
 				</router-link>
 			</ul>
 			<div class="line"></div>
 		</header>
 		<section>
-			<router-link v-for="i in 3" class="noticeGroup" :key="i.id" to="/detail" tag="div">
+			<router-link v-for="item in articleList" class="noticeGroup" :key="item.id" to="/detail" tag="div">
 				<p class="title">国庆放假通知</p>
 				<p class="date">
 					<span class="top">置顶</span>

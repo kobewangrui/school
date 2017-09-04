@@ -2,6 +2,7 @@
     padding: .3rem;
     background: #fff; 
     box-sizing: border-box;
+    min-height: 100vh;
 }
 /* header */
 header ul{
