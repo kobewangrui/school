@@ -8,6 +8,9 @@ import Resource from 'vue-resource'
 import $ from 'jquery'
 import 'jquery-validation'
 
+// 日期格式过滤器
+import './assets/filter/formatDate'
+
 window.jquery = window.$ = $
 Vue.use(VueRouter)
 Vue.use(Resource)

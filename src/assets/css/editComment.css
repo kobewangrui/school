@@ -13,9 +13,10 @@ textarea{
     box-sizing: border-box;
     font-size:.3rem;
     resize: none; 
+    outline: .01rem solid #fff;
 }
 .btn{
-     padding: 0 .3rem; 
+    padding: 0 .3rem; 
     box-sizing: border-box;
 }
 .btn button{
@@ -30,4 +31,7 @@ textarea{
 .btn .btnTrue{
     background: #2CB8EE;
     color: #fff;
+}
+.error{
+    outline: .01rem solid #f00;
 }

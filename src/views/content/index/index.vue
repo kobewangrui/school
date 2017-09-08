@@ -3,9 +3,9 @@
 	<div class="index">
 		<header>
 			<ul>
-				<router-link to="/" tag="li" v-for="item in titleList" :key="item.id">
+				<router-link :to="{path:'/',query:{id:item.id}}" tag="li" v-for="item in titleList" :key="item.id" v-on:click.native="getMsgList" exact>
 					<p>{{item.name}}</p>
-					<p> 
+					<p>
 						<span></span>
 					</p> 
 				</router-link>
@@ -13,27 +13,18 @@
 			<div class="line"></div>
 		</header>
 		<section>
-			<router-link v-for="item in articleList" class="noticeGroup" :key="item.id" to="/detail" tag="div">
-				<p class="title">国庆放假通知</p>
+			<router-link v-for="item in articleList" class="noticeGroup" :key="item.id" :to="{path:'detail',query:{article_id:item.id}}" tag="div">
+				<p class="title">{{item.title}}</p>
 				<p class="date">
-					<span class="top">置顶</span>
-					<span class="time">2017-09-28 09:30</span>
+					<span class="top" v-if="item.is_global_top === '1' || item.is_top === '1'">置顶</span>
+					<span class="time">{{item.updated_at | formatDate}}</span>
 				</p>
-				<p class="content">国庆放假通知国庆放假通知国庆放假通知国庆放假通知国庆放假通知国庆放假通知国庆放假通知国庆放假通知</p>
-				<p class="img one" v-if="i===1">
-					 <img :src="require('assets/image/timg.jpg')"> 
-				</p>		
-				<p class="img two" v-if="i===2">
-					 <img :src="require('assets/image/timg.jpg')">
-					 <img :src="require('assets/image/timg.jpg')"> 
-				</p>		
-				<p class="img three" v-if="i===3">
-					 <img :src="require('assets/image/timg.jpg')"> 
-					 <img :src="require('assets/image/timg.jpg')">
-					 <img :src="require('assets/image/timg.jpg')"> 
+				<p class="content" v-html="item.content"></p>
+				<p class="img" :class="{'one':item.images.length===1,'two':item.images.length===2,'three':item.images.length===3}">
+					 <img v-for="i in item.images" :key="i.id" :src="i">
 				</p>
 			</router-link>
 		</section>
 	</div>
 </template>
- <script src="assets/js/index.js"></script> 
+ <script src="assets/js/index.js"></script>

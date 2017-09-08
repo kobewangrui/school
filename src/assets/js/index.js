@@ -6,16 +6,21 @@ export default{
         }
     },
     created(){
-    // 获取顶部大标题列表
-    this.getTitleList()
-    // 获取首页消息列表
-    this.getMsgList()
+        // 获取顶部大标题列表
+        this.getTitleList()
+        // 获取首页消息列表
+        this.getMsgList()
     },
     methods:{
         getMsgList(){
-            this.$http.post('/api',{name:'smart_campus.article.list'},{emulateJSON:true}).then((res)=>{
+            let id;
+            if(this.$route.query.id === undefined || this.$route.query.id === ''){
+                id = '';
+            }else{
+                id = this.$route.query.id;
+            }
+            this.$http.post('/api',{name:'smart_campus.article.list',home_id:id},{emulateJSON:true}).then((res)=>{
                 if(res.body.code === 1000){
-                    console.log(res.body.data)
                     this.articleList = res.body.data.list
                 }else{
                     console.log(res.body.msg)

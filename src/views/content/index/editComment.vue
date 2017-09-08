@@ -2,7 +2,7 @@
 <template>
 	<div class="edit">
 		<p class="title">写评论</p>
-		<textarea placeholder="评论对所有人可见" v-model="content" :class=""></textarea>
+		<textarea placeholder="评论对所有人可见" v-model="content" :class="{'error':!btnSubmit}"></textarea>
 		<div class="btn">
 			<button :class="{'btnTrue':btnSubmit}" @click="submit">提交</button>
 		</div>
@@ -34,7 +34,16 @@
 			},
 			submit(){
 				if(this.btnSubmit){
-					alert()
+					this.$http.post('/api',{name:'smart_campus.comment',article_id:this.$route.query.article_id,content:this.content},{emulateJSON:true}).then((res)=>{
+						if(res.body.code === 1000){
+							this.$router.push({path:'/detail',query:{article_id:this.$route.query.article_id}})
+						}else{
+							console.log(res.body.msg)
+							
+						};
+					}).catch((error)=>{
+						console.log(error);
+					})
 				}
 			}
 		}

@@ -10,17 +10,20 @@ header ul{
     display: flex;
     justify-content: space-between;
 }
-  header ul li.router-link-active{
+header ul li.router-link-active{
     color: #0BA1E9;
 } 
 header ul li.router-link-active p:last-child{
     text-align: center;
 }
-header ul li.router-link-active p:last-child span{
+header ul li p:last-child span{
     display: inline-block;
     width: .6rem;
-    border: .025rem solid #0BA1E9;
+    border: .025rem solid #fff;
     border-radius: .08rem;
+}
+header ul li.router-link-active p:last-child span{
+    border: .025rem solid #0BA1E9;
 }
 header .line{
     border-bottom: .01rem solid #f6f6f6;

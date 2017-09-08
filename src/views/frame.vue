@@ -11,6 +11,7 @@
 		width: 100%;
 		height: 100%;
 		font-size: .34rem;
+		word-break:break-all;
 	}
 	ul li{
 		list-style: none;

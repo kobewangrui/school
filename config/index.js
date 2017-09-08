@@ -34,6 +34,13 @@ module.exports = {
         pathRewrite: {
           '^/api': ''
         }
+      },
+      '/login': {
+        target: 'http://campus.zhedacxz.com/index.php/PcApi/login',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/login': ''
+        }
       }
     },
     // CSS Sourcemaps off by default because relative paths are "buggy"

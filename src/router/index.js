@@ -159,9 +159,30 @@ export default function (VueRouter) {
 		]
 	}
   ]
-  const router = new VueRouter({
-    mode: 'history',
-    routes
-  })
-  return router
+const router = new VueRouter({
+	mode: 'history',
+		routes
+	})
+	// 登录拦截
+    // router.beforeEach((to, from, next) => {
+		$.ajax({
+				"type": "post",
+				"dataType": "application/x-www-form-urlencoded",
+				"contentType": "application/x-www-form-urlencoded;charset=utf-8",
+				"url" : "/login",
+				"success": (data)=>{
+					alert()
+				}
+			 });
+    //   if(true && to.path != '/login'){
+    //     console.log('尚未登录')
+    //     next({
+    //       path: '/login'
+    //     })
+    //   }else{
+    //     console.warn('登录成功')
+    //     next()
+    //   }
+    // })
+	return router
 }
