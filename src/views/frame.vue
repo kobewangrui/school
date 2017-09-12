@@ -84,6 +84,7 @@
 </style>
 <template>
 	<div>
+		{{$store.state.user}}
 		<router-view></router-view>
 		<div class="pop" :class="{'popHide':pop}">
 			<p>
@@ -111,6 +112,8 @@
 			return{
 				pop:false
 			}
+		},
+		created(){
 		},
 		methods:{
 			popToggle(){

@@ -26,7 +26,7 @@
                         </div>
                     </div>
                     <div class="recognize">
-                        <img v-if="is_praise":src="require('assets/image/recognized.png')" @click="praiseCancel(i.id)">
+                        <img v-if="i.is_praise" :src="require('assets/image/recognized.png')" @click="praiseCancel(i.id)">
                         <img v-if="!i.is_praise" :src="require('assets/image/recognize.png')" @click="praise(i.id)">
                         <span>{{i.praise_count}}</span>
                     </div>
@@ -34,7 +34,7 @@
                 <p class="detail">{{i.content}}</p>
             </div>
         </section>
-        <p class="showAll" v-if="commonList.length>0" @click="showMore">查看全部</p>
+        <!-- <p class="showAll" v-if="commonList.length>0" @click="showMore">查看全部</p> -->
     </div>
 </template>
 <script>
@@ -53,9 +53,9 @@
             this.getCommonList()
         },
         methods:{
-            showMore(){
+            // showMore(){
                 
-            },
+            // },
             getArticleDetail(){
                 this.$http.post('/api',{name:'smart_campus.article.info',article_id:this.$route.query.article_id},{emulateJSON:true}).then((res)=>{
                     if(res.body.code === 1000){
@@ -82,7 +82,7 @@
             praise(id){
                 this.$http.post('/api',{name:'smart_campus.praise',comment_id:id},{emulateJSON:true}).then((res)=>{
                     if(res.body.code === 1000){
-                        alert("点赞成功")
+                        this.getCommonList()
                     }else{
                         console.log(res.body.msg)
                     };
@@ -93,7 +93,7 @@
             praiseCancel(id){
                 this.$http.post('/api',{name:'smart_campus.praise.cancel',comment_id:id},{emulateJSON:true}).then((res)=>{
                     if(res.body.code === 1000){
-                        alert("取消点赞")
+                        this.getCommonList()
                     }else{
                         console.log(res.body.msg)
                     };

@@ -1,6 +1,3 @@
-/* .edit{
-    text-align: center;
-} */
 .title{
     line-height: .88rem;
     font-size: .32rem;
@@ -31,7 +28,4 @@ textarea{
 .btn .btnTrue{
     background: #2CB8EE;
     color: #fff;
-}
-.error{
-    outline: .01rem solid #f00;
 }

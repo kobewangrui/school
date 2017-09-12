@@ -1,4 +1,4 @@
-export default function (VueRouter) {
+export default function (VueRouter,store) {
   const routes = [
     {
 		path: '/',
@@ -163,17 +163,9 @@ const router = new VueRouter({
 	mode: 'history',
 		routes
 	})
+	store.dispatch('SYNC_ALL')
 	// 登录拦截
     // router.beforeEach((to, from, next) => {
-		$.ajax({
-				"type": "post",
-				"dataType": "application/x-www-form-urlencoded",
-				"contentType": "application/x-www-form-urlencoded;charset=utf-8",
-				"url" : "/login",
-				"success": (data)=>{
-					alert()
-				}
-			 });
     //   if(true && to.path != '/login'){
     //     console.log('尚未登录')
     //     next({
