@@ -24,6 +24,6 @@ export default {
 					context.commit('UPDATE_USER',info)
 				}
 			})
-      }
+        }
     }
-  }
+}
