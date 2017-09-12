@@ -46,16 +46,15 @@
         color: #fff;
     }
 </style>
-
 <template>
     <div>
         <div class="phoneNumber">
             <span>手机号</span>
-            <input type="text" v-model="number">
+            <input type="text" v-model="number" placeholder="请输入11位手机号">
             <span @click="clear()"> x </span>
         </div>
         <div class="btn">
-            <button :class="{'active':confirmActive}"> 确认</button>
+            <button :class="{'active':$vuerify.check()}" @click="changePhone"> 确认</button>
         </div>
     </div>
 </template>
@@ -63,20 +62,32 @@
 export default {
     data(){
         return{
-            number:'',
-            confirmActive:false
+            number:this.$store.state.user.mobile
         }
+    },
+    vuerify:{
+        number:[
+            'required',
+            {
+                test:/^1[34578]\d{9}$/
+            }
+        ]
     },
     methods:{
         clear(){
             this.number = '';
-            this.confirmActive = false;
-        }
-    },
-    watch:{
-        number(){
-            if(this.number !== '' || this.number !== undefiend){
-                this.confirmActive = true;
+        },
+        changePhone(){
+            if(this.$vuerify.check()){
+                this.$http.post('/api',{name:'smart_campus.user.reset.mobile',mobile:this.number},{emulateJSON:true}).then((res)=>{
+                    if(res.body.code === 1000){
+                            this.$router.push('/personalCenter/changeMsg')
+                    }else{
+                        console.log(res.body.msg)
+                    };
+                }).catch((error)=>{
+                    console.log(error);
+                })
             }
         }
     }

@@ -56,7 +56,7 @@
 		font-size: .32rem;
 		width: 4.38rem;
 		height: .76rem;
-		border: 1px solid #d2d2d2;
+		border: .01rem solid #d2d2d2;
 		padding: 0 .2rem;
 		box-sizing: border-box;
 		border-radius: .06rem;
@@ -81,26 +81,28 @@
 		left: 0;
 		z-index: 1;
 	}
+	.pop .error{
+		border: .01rem solid #f00;
+	}
 </style>
 <template>
 	<div>
-		{{$store.state.user}}
 		<router-view></router-view>
 		<div class="pop" :class="{'popHide':pop}">
 			<p>
 				<img :src="require('assets/image/loginBgimg.png')">
 			</p>
 			<p>
-				<input type="text" placeholder="学号/工号">
+				<input type="text" placeholder="学号/工号" v-model="number" :class="{'error':numberClass}">
 			</p>		
 			<p>
-				<input type="text" placeholder="姓名">
+				<input type="text" placeholder="姓名" v-model="name" :class="{'error':nameClass}">
 			</p>	
 			<p>
-				<input type="text" placeholder="手机号码">
+				<input type="text" placeholder="手机号码" v-model="phone" :class="{'error':phoneClass}">
 			</p>	
 			<p>
-				<button>提交验证</button>	
+				<button @click="submitCheck">提交验证</button>
 			</p>		
 		</div>
 		<div class="cover" @click="popToggle" v-if="!pop"></div>
@@ -110,15 +112,51 @@
 	export default{
 		data(){
 			return{
-				pop:false
+				pop:this.$store.state.user.is_authenticated===1 ? false : true,
+				number:'',
+				name:'',
+				phone:'',
+				numberClass:false,
+				nameClass:false,
+				phoneClass:false
 			}
 		},
-		created(){
+		vuerify:{
+			number:['required','onlyNumber'],
+			name:'required',
+			phone:['required','phoneCheck']
 		},
 		methods:{
 			popToggle(){
 				this.pop = true;
+			},
+			submitCheck(){
+				this.nameClass = !this.$vuerify.check(['name'])
+				this.numberClass = !this.$vuerify.check(['number'])
+				this.phoneClass = !this.$vuerify.check(['phone'])
+				if(this.$vuerify.check()){
+					// this.$http.post('/api',{name:'smart_campus'},{emulateJSON:true}).then((res)=>{
+					// 	if(res.body.code === 1000){
+					// 	}else{
+					// 		console.log(res.body.msg)
+					// 	};
+					// }).catch((error)=>{
+					// 	console.log(error);
+					// })
+				}
+			}
+		},
+		watch:{
+			name(){
+				this.nameClass = !this.$vuerify.check(['name'])
+			},
+			phone(){
+				this.phoneClass = !this.$vuerify.check(['phone'])
+			},
+			number(){
+				this.numberClass = !this.$vuerify.check(['number'])
 			}
 		}
-	}
+
+	}  
 </script>

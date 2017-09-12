@@ -49,13 +49,12 @@
         transform: scale(.8,1.8);
     }
 </style>
-
 <template>
     <div>
         <header>
             <div class="headerImg">
-                <img :src="require('assets/image/timg.jpg')" alt="">
-                <span>欧阳帅帅</span>
+                <img :src="$store.state.user.head">
+                <span>{{$store.state.user.nickname}}</span>
             </div>
             <router-link to="/personalCenter/changeMsg" tag="div" class="change">修改</router-link>
         </header>
