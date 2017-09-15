@@ -44,12 +44,24 @@ export default function (VueRouter,store) {
 						component: require('views/content/askForLeave/checkLeave.vue')
 					},
 					{
-						path: 'leaveHistory',
-						component: require('views/content/askForLeave/leaveHistory.vue')
+						path: 'leaveHistoryStudent',
+						component: require('views/content/askForLeave/leaveHistoryStudent.vue')
+					},
+					{
+						path: 'leaveHistoryTeacher',
+						component: require('views/content/askForLeave/leaveHistoryTeacher.vue')
 					},
 					{
 						path: 'leaveState',
 						component: require('views/content/askForLeave/leaveState.vue')
+					},
+					{
+						path: 'leaveDetail',
+						component: require('views/content/askForLeave/leaveDetail.vue')
+					},
+					{
+						path: 'aStudentHistory',
+						component: require('views/content/askForLeave/aStudentHistory.vue')
 					},
 				]
 			},
@@ -62,17 +74,17 @@ export default function (VueRouter,store) {
 						component: require('views/content/psychology/consult.vue')
 					},
 					{
-						path: 'msgListStudent',
-						component: require('views/content/psychology/msgListStudent.vue')
-					},
-					{
 						path: 'msgListTeacher',
 						component: require('views/content/psychology/msgListTeacher.vue')
 					},
 					{
 						path: 'studentChat',
 						component: require('views/content/psychology/studentChat.vue')
-					}
+					},
+					{
+						path: 'teacherChat',
+						component: require('views/content/psychology/teacherChat.vue')
+					},
 				]
 			},
 			{

@@ -1,0 +1,34 @@
+.history{
+    font-size: .34rem;
+    background: #fff;
+    padding: .3rem .3rem .5rem;
+    margin-bottom: 1rem;
+}
+.list{
+    border-bottom: .01rem solid #dfdfdf;
+    padding: .2rem 0;
+}
+.list .dateTime{
+    margin-bottom: .2rem;
+}
+.list .dateTime>span:first-child{
+    margin-right: .4rem;
+}
+.list .checkState{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.list .checkState>span:first-child{
+    font-size: .28rem;
+    color: #999;
+} 
+.list .checkState>span.fail{
+    color: #fb6155;
+}
+.list .checkState>span.success{
+    color: #2cb8ee;
+}
+.list .checkState>span.checking{
+    color: #46c45d;
+}

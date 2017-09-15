@@ -16,6 +16,10 @@
 	ul li{
 		list-style: none;
 	}
+	a{
+		text-decoration: none;
+		color: #333;
+	}
 	button,
 	input,
 	textarea{

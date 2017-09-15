@@ -42,15 +42,43 @@
 </style>
 <template>
     <ul>
-        <li v-for="i in 10" :key="i.id">
-            <img :src="require('assets/image/timg.jpg')">
+        <router-link v-for="item in list" :key="item.id" tag="li" :to="{path:'/psychology/teacherChat',query:{consult_rec_id:item.id,is_anonymous:item.is_anonymous,mobile:item.mobile,head:item.head,name:item.real_name}}">
+            <img :src="item.head" v-if="item.is_anonymous==='0'">
+            <img :src="require('assets/image/noName.jpg')" v-if="item.is_anonymous==='1'">
             <div class="msgDetail">
                 <p>
-                    <span>匿名</span>
-                    <span class="time">2017/06/23</span>
+                    <span v-if="item.is_anonymous==='1'">匿名</span>
+                    <span v-if="item.is_anonymous==='0'">{{item.real_name}}</span>
+                    <span class="time">{{item.last_msg_time | formatDate}}</span>
                 </p>
-                <p>老师，我和我我和我我和我我和我我老师我和,我我和我我和我我和我我</p>
+                <p>{{item.last_msg}}</p>
             </div>
-        </li>
+        </router-link>
     </ul>
 </template>
+<script>
+export default {
+    data(){
+        return{
+            list:[]
+        }
+    },
+    created(){
+        this.getChatHistory()
+    },
+    methods:{
+        getChatHistory(){
+            this.$http.post('/api',{name:'smart_campus.consult.record.list',index:1,type:''},{emulateJSON:true}).then((res)=>{
+                if(res.body.code === 1000){
+                    this.list = res.body.data.list;
+                }else{
+                    console.log(res.body.msg)
+                };
+            }).catch((error)=>{
+                console.log(error);
+            })
+        }
+    }
+}
+</script>
+

@@ -32,7 +32,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border-bottom: 1px solid #dcdcdc;
+        border-bottom: .01rem solid #dcdcdc;
         padding: .35rem 0;
     }
     section .list .title img{

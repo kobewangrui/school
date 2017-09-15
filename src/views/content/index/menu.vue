@@ -5,31 +5,35 @@
             <p class="title">
                 <span></span>
                 <span>日常事务</span>
-            </p>        
+            </p>  
             <ul class="list">
-                <router-link tag="li" to="/askForLeave/askLeave">
-                     <img :src="require('assets/image/askLeave.png')"> 
+                <router-link tag="li" to="/askForLeave/askLeave" v-if="$store.state.user.type==='1'">
+                     <img :src="require('assets/image/askLeave.png')">
                     <p>请假申请</p>
                 </router-link>
-                <router-link tag="li" to="/leaveSchool/leave">
-                    <img :src="require('assets/image/leaveSchool.png')"> 
+                <router-link tag="li" to="/leaveSchool/leave" v-if="$store.state.user.type==='1'">
+                    <img :src="require('assets/image/leaveSchool.png')" v-if="$store.state.user.type==='1'"> 
                     <p>离校</p>
                 </router-link>
-                <li @click="popToggle('report')">
+                <li @click="popToggle('report')" v-if="$store.state.user.type==='1'">
                     <img :src="require('assets/image/register.png')"> 
                     <p>报道</p>
                 </li>
-                <router-link tag="li" to="/askForLeave/leaveHistory">
+                <router-link tag="li" to="/askForLeave/leaveHistoryTeacher">
                     <img :src="require('assets/image/examineAndApprove.png')"> 
                     <p>审批</p>
                 </router-link>
                 <li @click="popToggle('recruit')">
-                    <img :src="require('assets/image/enroll.png')"> 
+                    <img :src="require('assets/image/enroll.png')">
                     <p>录取查询</p>
                 </li>
+                <router-link :to="chatLink" tag="li" v-if="true">
+                    <img :src="require('assets/image/psychologicalCounseling.png')"> 
+                    <p>心理咨询</p>
+                </router-link>
             </ul>
         </section>
-        <section class="lineMore">
+        <!-- <section class="lineMore">
             <p class="title">
                 <span></span>
                 <span>校园服务</span>
@@ -76,7 +80,7 @@
                     <p>编辑</p>
                 </li>
             </ul>
-        </section>
+        </section> -->
         <div class="pop" :class="{'popShow':popHandle}">
                 <p>
                     <img :src="require('assets/image/loginBgimg.png')" alt="">
@@ -102,9 +106,15 @@
                 placeholderUname:'',
                 placeholderPwd:'',
                 btnText:'',
-                searchType:''
+                searchType:'',
+                chatLink: '',
+                isFirst:''
 			}
-		},
+        },
+        created(){
+            // 验证是不是第一次咨询
+            this.checkFirstChat()
+        },
 		methods:{
 			popToggle(arg){
                 this.popHandle = !this.popHandle;
@@ -125,6 +135,31 @@
                     this.$router.push('/recruit/recruitDetail')
                 }else if(this.searchType === 2){
                     this.$router.push('/leaveSchool/report')
+                }
+            },
+            checkFirstChat(){
+                this.$http.post('/api',{name:'smart_campus.consult.msg.student.list',index:1},{emulateJSON:true}).then((res)=>{
+                    if(res.body.code === 1000){
+                        res.body.data.list.length > 0 ? this.isFirst = false : this.isFirst = true;
+                        // 判断跳转
+                        this.urlAddress()
+                    }else{
+                        console.log(res.body.msg)
+                    };
+                }).catch((error)=>{
+                    console.log(error);
+                })
+            },
+            urlAddress(){
+                if(this.$store.state.user.type==='1'){
+                    if(!this.isFirst){
+                        // this.chatLink =  '/psychology/studentChat'
+                        this.chatLink =  '/psychology/msgListTeacher'
+                    }else{
+                        this.chatLink =  '/psychology/consult'
+                    }
+                }else if(this.$store.state.user.type==='2'){
+                    this.chatLink = '/psychology/msgListTeacher'
                 }
             }
 		}

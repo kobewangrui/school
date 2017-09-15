@@ -2,48 +2,39 @@
 <template>
     <div>
         <!-- 有备注 通过图片 -->
-        <img class="sign successHaveIntro" :src="require('assets/image/successHaveIntro.png')" v-if="false">
-        <img class="sign success" :src="require('assets/image/success.png')" v-if="false">
-        <img class="sign successHaveIntro" :src="require('assets/image/fail.png')">
-        <p class="illIntro" v-if="true">
+        <img class="sign successHaveIntro" :src="require('assets/image/successHaveIntro.png')" v-if="$route.query.status==='2' && $route.query.reply !=='' && $route.query.reply !==undefined">
+        <img class="sign success" :src="require('assets/image/success.png')" v-if="$route.query.status==='2' && ($route.query.reply ==='' || $route.query.reply ===undefined)">
+        <img class="sign successHaveIntro" :src="require('assets/image/fail.png')" v-if="$route.query.status==='3'">
+        <p class="illIntro" v-if="$route.query.reply !=='' && $route.query.reply !==undefined">
             <span>备注说明</span>
-            <span>11111111111111111123</span>
+            <span>{{$route.query.reply}}</span>
         </p>
-        <section class="leaveDetail">
+          <section class="leaveDetail">
             <p>
                 <span>审批编号</span>
-                <span>11111111111111111123</span>
+                <span>{{$route.query.id}}</span>
             </p>
             <p>
                 <span>开始时间</span>
-                <span>2017-02-02 07:00:00</span>
+                <span>{{$route.query.start_time | formatDate}}</span>
             </p>
             <p>
                 <span>结束时间</span>
-                <span>2017-02-02 07:00:00</span>
+                <span>{{$route.query.end_time | formatDate}}</span>
             </p>
             <p>
                 <span>请假原因</span>
-                <span>生病了吧</span>
+                <span>{{$route.query.reason}}</span>
             </p>
             <p>
                 <span>申请人</span>
-                <span>王睿龙</span>
+                <span>{{$route.query.real_name}}</span>
             </p>
             <div class="noticeGroup">
-                <p class="img one" v-if="false">
-                        <img :src="require('assets/image/timg.jpg')"> 
+                <p class="img one" :class="{'one':$route.query.images.length===1,'two':$route.query.images.length===2,'three':$route.query.images.length===3}">
+                    <img :src="img" v-for="img in $route.query.images" :key="img.id"> 
                 </p>		
-                <p class="img two" v-if="false">
-                        <img :src="require('assets/image/timg.jpg')">
-                        <img :src="require('assets/image/timg.jpg')"> 
-                </p>		
-                <p class="img three">
-                        <img :src="require('assets/image/timg.jpg')"> 
-                        <img :src="require('assets/image/timg.jpg')">
-                        <img :src="require('assets/image/timg.jpg')"> 
-                </p>
             </div>
-        </section>
+        </section>  
     </div>
 </template>

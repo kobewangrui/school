@@ -1,0 +1,154 @@
+.chat{
+    margin-bottom: 1.6rem;
+}
+header{
+    width: 100%;
+    background: #fff;
+    padding: .3rem .3rem .4rem;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    font-size: .32rem;
+}
+header .chatIntro{
+    color: #585858;
+}
+header .connect{
+    margin-top: .4rem;
+}
+header .connect a{
+    display: inline-block;
+    width: .7rem;
+    height: .7rem;
+    border-radius:50%;
+    margin-right: .3rem;
+}
+header .connect img{
+    width: .7rem;
+    height: .7rem;
+}    
+header .studentMsg{
+    display: flex;
+    justify-content: space-between;
+}
+header .studentConnect{
+    text-align: right;
+    margin-top: .2rem;
+    
+}
+header .studentConnect img{
+    width: .4rem;
+    height: .4rem;
+    margin-right: .1rem;
+}
+header .studentConnect img,
+header .studentConnect span{
+    vertical-align: middle;
+} 
+
+
+/* 老师聊天气泡 */
+section{
+    margin-top: 3.3rem;
+}
+.teacher{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: .3rem;
+    box-sizing: border-box;
+    padding: 0 .3rem;
+}
+.student img,
+.teacher img{
+    width: .64rem;
+    height: .64rem;
+    border-radius: 50%;
+}
+.time{
+    font-size: .24rem;
+    color: #909090;
+}
+.detail p.msg{
+    display: inline-block;
+    max-width: 5.26rem;
+    font-size: .32rem;
+    padding: .2rem;
+}
+.teacher .detail p.msg{
+    background: #75b5ff;
+    border-radius: .32rem .32rem .32rem .08rem;
+    margin-left: .15rem;
+    color: #fff;
+}
+.teacher .detail .time{
+    margin: .15rem 0 0 .2rem;
+}
+
+
+/* 学生聊天气泡 */
+.student{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-flow: row-reverse nowrap;
+    margin-bottom: .3rem;
+    box-sizing: border-box;
+    padding: 0 .3rem;
+}
+.student .detail{
+    text-align: right;
+}
+.student .detail p.msg{
+    background: #fff;
+    border-radius: .32rem .32rem .08rem .32rem;
+    margin-left: .15rem;
+    color: #414852;
+    margin-right: .15rem;
+}
+.student .detail .time{
+    margin: .15rem .2rem 0 0;
+    text-align: right;
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    background: #fff;
+    font-size: .3rem;
+    text-align:center;
+    padding: .2rem .3rem;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+footer img{
+    width: .36rem;
+    height: .36rem;
+    border-radius: 50%;
+    
+}
+footer img:nth-child(2){
+    margin-right: .1rem;
+}
+footer input{
+    font-size: .3rem;
+    width: 4.8rem;
+    height: .6rem;
+    border: 1px solid #d3d3d3;
+    padding: 0 .2rem;
+    box-sizing: border-box;
+    border-radius: .08rem;
+}
+footer button{
+    width: .78rem;
+    height: .6rem;
+    font-size: .3rem;
+    border-radius: .08rem;
+    border: .01rem solid #bfbfbf;
+    color: #bbb;
+}
+footer button.active{
+    color: #333;
+}

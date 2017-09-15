@@ -80,6 +80,10 @@
     background: #2CB8EE;
     margin-left: .4rem;
 }
+.connect .sendPerson button.checkFail{
+    color: #bbb;
+    background: #e9ebec;
+}    
 .teacherIntro{
     font-size: .32rem;
     color: #ababab;

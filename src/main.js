@@ -12,7 +12,7 @@ import $ from 'jquery'
 import myRules from './rules'
 
 // 日期格式过滤器
-import './assets/filter/formatDate'
+import './filter/formatDate'
 
 Vue.use(VueRouter)
 Vue.use(Resource)
