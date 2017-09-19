@@ -77,6 +77,10 @@ section.lineMore ul.list{
     color: #fff;
     background: #2cb8ee;
 }
+.pop button.active{
+    color: #bbb;
+    background: #e9ebec;
+}
 .popShow{
     transform: scale(1,1);
 }

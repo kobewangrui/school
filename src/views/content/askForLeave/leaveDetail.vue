@@ -61,7 +61,7 @@ export default {
                         images:this.$route.query.images,
                         real_name:this.$route.query.real_name,
                         reason:this.$route.query.reason,
-                        reply:this.$route.query.reply
+                        reply:this.content,
                     }
                     if(actions === 1){
                         arg.status = '2'

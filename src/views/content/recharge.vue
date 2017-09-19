@@ -27,7 +27,7 @@
     }
     header ul li label{
         display:inline-block;
-        width: 2.2rem;
+        width: 2.19rem;
         height: 1.2rem;
         border-radius: .08rem;
         border: 0.01rem solid #c2c2c2;

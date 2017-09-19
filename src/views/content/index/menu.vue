@@ -86,13 +86,13 @@
                     <img :src="require('assets/image/loginBgimg.png')" alt="">
                 </p>
                 <p>
-                    <input type="text" :placeholder="placeholderUname">
+                    <input type="text" :placeholder="placeholderUname" v-model="userName">
                 </p>		
                 <p>
-                    <input type="text" :placeholder="placeholderPwd">
+                    <input type="password" :placeholder="placeholderPwd" v-model="passWord">
                 </p>	
                 <p>
-                    <button @click="search">{{btnText}}</button>	
+                    <button @click="search" :class="{'active':!$vuerify.check()}">{{btnText}}</button>	
                 </p>		
             </div>
             <div class="cover" @click="popToggle" v-if="popHandle"></div>
@@ -108,16 +108,24 @@
                 btnText:'',
                 searchType:'',
                 chatLink: '',
-                isFirst:''
+                isFirst:'',
+                userName:'',
+                passWord:''
 			}
         },
         created(){
             // 验证是不是第一次咨询
             this.checkFirstChat()
         },
+        vuerify:{
+            userName:['required'],
+            passWord:['required']
+        },
 		methods:{
 			popToggle(arg){
                 this.popHandle = !this.popHandle;
+                this.userName = '';
+                this.passWord = '';
                 if(arg ==='recruit'){
                     this.placeholderUname = '学号';
                     this.placeholderPwd = '身份证后六位';
@@ -131,10 +139,12 @@
                 }
             },
             search(){
-                if(this.searchType === 1){
-                    this.$router.push('/recruit/recruitDetail')
-                }else if(this.searchType === 2){
-                    this.$router.push('/leaveSchool/report')
+                if(this.$vuerify.check()){
+                    if(this.searchType === 1){
+                            this.$router.push('/recruit/recruitDetail')
+                    }else if(this.searchType === 2){
+                        this.$router.push('/leaveSchool/report')
+                    }
                 }
             },
             checkFirstChat(){
@@ -153,8 +163,7 @@
             urlAddress(){
                 if(this.$store.state.user.type==='1'){
                     if(!this.isFirst){
-                        // this.chatLink =  '/psychology/studentChat'
-                        this.chatLink =  '/psychology/msgListTeacher'
+                        this.chatLink =  '/psychology/studentChat'
                     }else{
                         this.chatLink =  '/psychology/consult'
                     }

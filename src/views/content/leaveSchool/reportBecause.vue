@@ -74,28 +74,49 @@
         <div class="formFill">
             <ul>
                 <li>
-                    <input type="checkbox" id="teacherStrong">
+                    <input type="checkbox" id="teacherStrong" v-model="because" value="strong">
                     <label for="teacherStrong"></label>
                     <label for="teacherStrong">师资力量强大</label>
                 </li>
                 <li>
-                    <input type="checkbox" id="facility">
+                    <input type="checkbox" id="facility" v-model="because" value="facility">
                     <label for="facility"></label>
                     <label for="facility">教学设备先进</label>
                 </li>
                 <li>
-                    <input type="checkbox" id="environment">
+                    <input type="checkbox" id="environment" v-model="because" value="enironment">
                     <label for="environment"></label>
                     <label for="environment">校园环境好</label>
                 </li>
                 <li>
-                    <input type="checkbox" id="nearSchool">
+                    <input type="checkbox" id="nearSchool" v-model="because" value="nearSchool">
                     <label for="nearSchool"></label>
                     <label for="nearSchool">离家较近</label>
                 </li>
             </ul>
-            <textarea placeholder="填写更多描述（选填）"></textarea>
-            <button class="active">提交</button>
+            <textarea placeholder="填写更多描述（选填）" v-model="intro"></textarea>
+            <button :class="{'active':$vuerify.check()}" @click="submit">提交</button>
         </div>
     </div>
 </template>
+<script>
+export default {
+    data(){
+        return{
+            because:[],
+            intro:''
+        }
+    },
+    vuerify:{
+        because:['required'],
+    },
+    methods:{
+        submit(){
+            if(this.$vuerify.check()){
+                alert('submit')
+            }
+        }
+    }
+}
+</script>
+

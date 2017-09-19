@@ -31,10 +31,14 @@
     <div class="electric">
         <p class="toggleList">
             <label for="dormitory">宿舍楼：</label>
+            <input slot="right" type="text" @click.stop="show2 = true" v-model="model2" readonly placeholder="请填写宿舍地址">
+            <yd-cityselect v-model="show2" ref="cityselectDemo" :callback="result2" :items="district" provance="新疆" city="乌鲁木齐市" area="天山区"></yd-cityselect>
             <span> > </span>
         </p>
         <p class="toggleList">
             <label for="roomNumber">宿舍号：</label>
+            <input slot="right" type="text" @click.stop="show2 = true" v-model="model2" readonly placeholder="请填写宿舍地址">
+            <yd-cityselect v-model="show2" ref="cityselectDemo" :callback="result2" :items="district" provance="新疆" city="乌鲁木齐市" area="天山区"></yd-cityselect>
             <span> > </span>
         </p>
         <p class="inputItem">
@@ -47,3 +51,43 @@
         </p>
     </div> 
 </template>
+<script>
+
+export default {
+    data(){
+        return{
+            show2: false,
+            model2: '',
+            district:[{
+                "v": "1",
+                "n": "北京",
+                // "c": [
+                //     {
+                //         "v": "2816",
+                //         "n": "密云区",
+                //         // "c": [
+                //         //     {"v": "6667", "n": "城区"},
+                //         //     {"v": "2862", "n": "城区以外"}
+                //         // ]
+                //     },
+                    // {
+                    //     "v": "72",
+                    //     "n": "朝阳区",
+                        // "c": [
+                        //     {"v": "2819", "n": "三环到四环之间"},
+                        //     {"v": "2839", "n": "四环到五环之间"},
+                        //     {"v": "2840", "n": "五环到六环之间"}
+                        // ]
+                    // },
+                // ]
+            }]
+        }
+    },
+    methods:{
+        result2(ret){
+             this.model2 = (ret.itemName1===undefined?'':ret.itemName1) + ' ' + (ret.itemName2===undefined?'':ret.itemName2) + ' ' + (ret.itemName3===undefined?'':ret.itemName3);
+        }
+    }
+}
+</script>
+

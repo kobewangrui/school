@@ -22,9 +22,11 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
   "dependencies": {
+    "element-upload": "^1.0.0",
     "vue": "^2.2.2",
     "vue-resource": "^1.2.1",
     "vue-router": "^2.2.0",
+    "vue-ydui": "^0.9.4",
     "vuerify": "^0.4.0"
   },
   "devDependencies": {
