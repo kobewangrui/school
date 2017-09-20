@@ -68,9 +68,7 @@ export default {
     vuerify:{
         number:[
             'required',
-            {
-                test:/^1[34578]\d{9}$/
-            }
+            'phoneCheck'
         ]
     },
     methods:{

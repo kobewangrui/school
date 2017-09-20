@@ -4,7 +4,7 @@
         padding: .3rem;
         box-sizing: border-box;
         background: #fff;
-        height: 100vh;
+        height: 105vh;
     }
     header p{
         color: #585858;
@@ -27,7 +27,7 @@
     }
     header ul li label{
         display:inline-block;
-        width: 2.19rem;
+        width: 2.18rem;
         height: 1.2rem;
         border-radius: .08rem;
         border: 0.01rem solid #c2c2c2;
@@ -41,26 +41,6 @@
         border: 0.01rem solid #2cb8ee;
         color: #2cb8ee;
     }
-    .history button{
-        font-size: .34rem;
-        color: #bbb;
-        width: 100%;
-        height: .88rem;
-        border-radius: .08rem;
-        background: #E9EbEC;
-        height: .88rem;
-        line-height: .88rem;
-        border-radius: .08rem;
-    }
-    .history button.active{
-        background: #2cb8ee;
-    }
-    .history .PayHistory{
-        color: #2cb8ee;
-        font-size: .3rem;
-        text-align: center;
-        margin-top: .2rem;
-    }	
     footer{
 		width: 100%;
 		position: fixed;
@@ -142,10 +122,6 @@
             </ul>
         </header>
         <router-view></router-view>
-        <div class="history">
-            <button>充值</button>
-            <p class="PayHistory">充值记录</p>   
-        </div>
     </div>
     <footer>
         <ul>

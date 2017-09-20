@@ -32,3 +32,6 @@
 .list .checkState>span.checking{
     color: #46c45d;
 }
+.list .checkState>span.reset{
+    color: #f7ba2a;
+}

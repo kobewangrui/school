@@ -50,7 +50,8 @@ export default {
                 images:i.images,
                 real_name:i.real_name,
                 reason:i.reason,
-                status:i.status
+                status:i.status,
+                reply:i.reply
             }
             if(i.status === '0'){
                 this.$router.push({path:'/askForLeave/leaveDetail',query:arg})

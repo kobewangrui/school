@@ -1,4 +1,15 @@
 <style lang="css" src="assets/css/askLeave.css" scoped></style>
+<style lang="css">
+    .yd-datetime-head>a{
+        font-size: .34rem!important;
+    }
+    .yd-datetime-head>a:last-child{
+        color: #2cb8ee!important;
+    }
+    .yd-datetime-content .yd-datetime-item{
+        font-size: .34rem;
+    }
+</style>
 <template>
     <div>
         <p class="leaveTime">本学期第{{total}}次请假</p>
@@ -31,7 +42,7 @@
                         <img v-if="imageUrl" :src="imageUrl" class="avatar">
                         <img :src="require('assets/image/uploadImg.png')" v-else>
                     </ElUpload> -->
-                    <input type="file">
+                    <input type="file"  accept="image/*">
                 </form>
                 ---{{imageUrl}}---
             </div>
@@ -41,7 +52,7 @@
             <p>王睿龙</p>
         </div>
          <div class="btnSubmit">
-            <button :class="{'btnActive':!$vuerify.check()}">提交</button>
+            <button :class="{'btnActive':!$vuerify.check()}" @click="submit">提交</button>
          </div>
     </div>
 </template>
@@ -96,17 +107,30 @@
                     console.log(error);
                 })
             },      
-            handleAvatarSuccess(res, file) {
+            handleAvatarSuccess(res, file){
                 console.log(res)
                 this.imageUrl = URL.createObjectURL(file.raw);
             },
             beforeAvatarUpload(file) {
                 var patt1=/(jpg|jpeg|png|bmp)$/
                 const isJPG = patt1.test(file.type);
-                if (!isJPG) {
+                if (!isJPG){
                 console.log('仅支持图片格式')
                 }
                 return isJPG;
+            },
+            submit(){
+                if(this.$vuerify.check()){
+                    this.$http.post('/api',{name:'smart_campus.leave.apply'},{emulateJSON:true}).then((res)=>{
+                        if(res.body.code !== 1000){
+                            this.$router.push('/askForLeave/leaveHistoryStudent')
+                        }else{
+                            console.log(res.body.msg)
+                        };
+                    }).catch((error)=>{
+                        console.log(error);
+                    })
+                }
             }
         }
     }

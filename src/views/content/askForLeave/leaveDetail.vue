@@ -25,7 +25,7 @@
             <div class="noticeGroup">
                 <p class="img one" :class="{'one':$route.query.images.length===1,'two':$route.query.images.length===2,'three':$route.query.images.length===3}">
                     <img :src="img" v-for="img in $route.query.images" :key="img.id"> 
-                </p>		
+                </p>
             </div>
         </section>  
         <router-link :to="{path:'/askForLeave/aStudentHistory',query:{student_id:$route.query.student_id}}" tag="div" class="historyChat">
@@ -34,8 +34,9 @@
         </router-link>
         <textarea class="comment" placeholder="添加备注" v-model="content"></textarea>
         <div class="operate">
-            <button class="reject" @click="handlerAsk(2)">拒绝</button>
-            <button class="agree" @click="handlerAsk(1)">同意</button>
+            <button class="reject" @click="handlerAsk(2)" v-if="$store.state.user.type==='2'">拒绝</button>
+            <button class="agree" @click="handlerAsk(1)" v-if="$store.state.user.type==='2'">同意</button>
+            <button class="recall" @click="studentCancel()" v-if="$store.state.user.type==='1'">撤回</button>
         </div>
     </div>
 </template>
@@ -69,6 +70,17 @@ export default {
                         arg.status = '3'
                     }
                     this.$router.push({path:'/askForLeave/leaveState',query:arg})
+                }else{
+                    console.log(res.body.msg)
+                };
+            }).catch((error)=>{
+                console.log(error);
+            })
+        },
+        studentCancel(){
+            this.$http.post('/api',{name:'smart_campus.leave.cancel'},{emulateJSON:true}).then((res)=>{
+                if(res.body.code !== 1000){
+                    this.$router.push('/askForLeave/leaveHistoryStudent')
                 }else{
                     console.log(res.body.msg)
                 };

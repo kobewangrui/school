@@ -40,10 +40,6 @@ export default function (VueRouter,store) {
 						component: require('views/content/askForLeave/askLeave.vue')
 					},
 					{
-						path: 'checkLeave',
-						component: require('views/content/askForLeave/checkLeave.vue')
-					},
-					{
 						path: 'leaveHistoryStudent',
 						component: require('views/content/askForLeave/leaveHistoryStudent.vue')
 					},

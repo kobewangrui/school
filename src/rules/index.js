@@ -6,5 +6,9 @@ export default {
     onlyNumber:{
         test: /^[0-9]*$/,
         message: '仅支持输入纯数字'
+    },
+    moreThanZero:{
+        test: /^[1-9]\d*(\.\d+)?$/,
+        message: '仅支持大于0的数字'
     }
 }
