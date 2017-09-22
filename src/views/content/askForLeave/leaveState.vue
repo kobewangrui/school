@@ -4,10 +4,10 @@
         <!-- 有备注 通过图片 -->
         <img class="sign successHaveIntro" :src="require('assets/image/successHaveIntro.png')" v-if="$route.query.status==='2' && $route.query.reply !=='' && $route.query.reply !==undefined">
         <img class="sign success" :src="require('assets/image/success.png')" v-if="$route.query.status==='2' && ($route.query.reply ==='' || $route.query.reply ===undefined)">
-        <img class="sign successHaveIntro" :src="require('assets/image/fail.png')" v-if="$route.query.status==='3' && $route.query.reply !=='' && $route.query.reply !==undefined">
+        <img class="sign successHaveIntro" :src="require('assets/image/failHaveIntro.png')" v-if="$route.query.status==='3' && $route.query.reply !=='' && $route.query.reply !==undefined">
         <img class="sign success" :src="require('assets/image/fail.png')" v-if="$route.query.status==='3' && ($route.query.reply ==='' || $route.query.reply ===undefined)">
-        <img class="sign successHaveIntro" :src="require('assets/image/undo.png')" v-if="$route.query.status==='1' && $route.query.reply !=='' && $route.query.reply !==undefined">
-        <img class="sign success" :src="require('assets/image/undo.png')" v-if="$route.query.status==='1' && ($route.query.reply ==='' || $route.query.reply ===undefined)">
+        <img class="sign successHaveIntro" :src="require('assets/image/repealHaveIntro.png')" v-if="$route.query.status==='1' && $route.query.reply !=='' && $route.query.reply !==undefined">
+        <img class="sign success" :src="require('assets/image/repeal.png')" v-if="$route.query.status==='1' && ($route.query.reply ==='' || $route.query.reply ===undefined)">
         <p class="illIntro" v-if="$route.query.reply !=='' && $route.query.reply !==undefined">
             <span>备注说明</span>
             <span>{{$route.query.reply}}</span>

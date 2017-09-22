@@ -132,7 +132,7 @@
 		},
 		methods:{
 			popToggle(){
-				this.pop = true;
+				this.pop = true;  
 			},
 			submitCheck(){
 				this.nameClass = !this.$vuerify.check(['name'])
