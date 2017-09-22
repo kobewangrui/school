@@ -49,7 +49,7 @@ export default {
                     "http://campus.zhedacxz.com/uploads/head.jpeg",
                     "http://campus.zhedacxz.com/uploads/headj.jpeg"
                 ],
-                "reply": "1111",
+                "reply": "",
                 "status": "2",
                 "real_name": "陶跃跃"
             },
@@ -63,7 +63,7 @@ export default {
                 "teacher_id": "2",
                 "reason": "a little sick",
                 "images": [],
-                "reply": "111",
+                "reply": "",
                 "status": "1",
                 "real_name": "陶跃跃"
             },
@@ -77,7 +77,7 @@ export default {
                 "teacher_id": "2",
                 "reason": "a little sick",
                 "images": [],
-                "reply": "111",
+                "reply": "",
                 "status": "0",
                 "real_name": "陶跃跃"
             },
@@ -91,7 +91,7 @@ export default {
                 "teacher_id": "2",
                 "reason": "a little sick",
                 "images": [],
-                "reply": "111",
+                "reply": "",
                 "status": "3",
                 "real_name": "陶跃跃"
             }
