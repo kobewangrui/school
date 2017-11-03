@@ -123,7 +123,7 @@
 				numberClass:false,
 				nameClass:false,
 				phoneClass:false
-			}
+			}   
 		},
 		vuerify:{
 			number:['required','onlyNumber'],
