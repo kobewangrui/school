@@ -134,7 +134,7 @@
 			popToggle(){
 				this.pop = true;  
 			},
-			submitCheck(){
+			submitCheck(){   
 				this.nameClass = !this.$vuerify.check(['name'])
 				this.numberClass = !this.$vuerify.check(['number'])
 				this.phoneClass = !this.$vuerify.check(['phone'])
