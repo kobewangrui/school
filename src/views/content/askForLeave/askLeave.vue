@@ -31,20 +31,7 @@
         <div class="uploadImg">
             <p>图片</p>
             <div class="imgList">
-                <form enctype="multipart/form-data" action="/api">
-                    <!-- <ElUpload
-                    class="avatar-uploader"
-                    action="/api"
-                    :data="uploadeData"
-                    :show-file-list="false"
-                    :on-success="handleAvatarSuccess"
-                    :before-upload="beforeAvatarUpload">
-                        <img v-if="imageUrl" :src="imageUrl" class="avatar">
-                        <img :src="require('assets/image/uploadImg.png')" v-else>
-                    </ElUpload> -->
-                    <input type="file"  accept="image/*">
-                </form>
-                ---{{imageUrl}}---
+                <addImg @clickImg = "clickImg" :max="10" @imgChange = "imgChange"></addImg>
             </div>
         </div>
         <div class="studentMsg">
@@ -64,10 +51,9 @@
                 end_time: this.defaultDate('end'),
                 reason:'',
                 total:'',
-                imageUrl: '',
-                uploadeData:{
-                    name:'smart_campus.upload.img'
-                }
+                activeImg: '',
+                uploading: false,
+                imgs:[],
             }
         },
         created(){
@@ -80,6 +66,28 @@
             end_time:['required']
         },
         methods:{
+            clickImg(img){
+				this.activeImg = img;
+			},
+			imgChange(files){
+				this.imgs = files;
+            },
+            upload(){
+				var fm = new FormData();
+				this.imgs.forEach((img) => {
+					fm.append('img', img, `${Math.ceil(Date.now()*Math.random()*10)}.jpg`);
+                })
+                fm.append('name','smart_campus.upload.img');
+                console.log(JSON.stringify(fm));
+                this.$http.post('/PcApi',fm,{emulateJSON:true}).then((res)=>{
+                    console.log(JSON.stringify(fm));
+					if(res.body.code === 1000){
+						console.log('上传成功');
+					}
+				}).catch((error)=>{
+					console.log(error);
+				})
+			},
             defaultDate(i){
                 let d = new Date(),
                     Y = d.getFullYear(),
@@ -107,21 +115,9 @@
                     console.log(error);
                 })
             },      
-            handleAvatarSuccess(res, file){
-                console.log(res)
-                this.imageUrl = URL.createObjectURL(file.raw);
-            },
-            beforeAvatarUpload(file) {
-                var patt1=/(jpg|jpeg|png|bmp)$/
-                const isJPG = patt1.test(file.type);
-                if (!isJPG){
-                console.log('仅支持图片格式')
-                }
-                return isJPG;
-            },
             submit(){
                 if(this.$vuerify.check()){
-                    this.$http.post('/api',{name:'smart_campus.leave.apply'},{emulateJSON:true}).then((res)=>{
+                    this.$http.post('/api',{name:'smart_campus.leave.apply',start_time:new Date(this.start_time).getTime()/1000,end_time:new Date(this.end_time).getTime()/1000,reason:this.reason,images:''},{emulateJSON:true}).then((res)=>{
                         if(res.body.code !== 1000){
                             this.$router.push('/askForLeave/leaveHistoryStudent')
                         }else{
@@ -132,6 +128,14 @@
                     })
                 }
             }
-        }
+        },
+        components:{
+            addImg:require('components/addImg.vue')
+        },
+        watch:{
+            'imgs':function(){
+                this.upload();
+            }
+        },
     }
 </script>
